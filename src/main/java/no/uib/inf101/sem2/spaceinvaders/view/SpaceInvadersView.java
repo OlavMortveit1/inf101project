@@ -137,8 +137,8 @@ public SpaceInvadersView(ViewableSpaceInvadersModel model) {
 
    public void drawGameOverScreen(Graphics2D g){
         g.setColor(Color.RED);
-        g.setFont(new Font("Helvetica", Font.PLAIN, 50));
-        g.drawString("GAME OVeR", 155, 300);
+        g.setFont(new Font("Helvetica", Font.BOLD, 50));
+        g.drawString("GAME OVER", 155, 300);
         g.setFont(new Font("Helvetica", Font.PLAIN, 25));
         g.drawString("Press ENTER to return to startscreen", 100, 330);
 
