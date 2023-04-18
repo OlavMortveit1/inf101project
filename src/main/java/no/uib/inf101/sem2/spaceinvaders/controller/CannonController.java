@@ -25,7 +25,7 @@ public class CannonController implements java.awt.event.KeyListener {
         this.view = view; 
         view.addKeyListener(this);
         view.setFocusable(true);
-        this.timer = new Timer(cmodel.timeBetweenEachAlienMove(), this::clockTick);
+        this.timer = new Timer(cmodel.timeBetweenEachAlienLaserMove(), this::clockTick);
         
         timer.start();
      
@@ -68,7 +68,11 @@ public class CannonController implements java.awt.event.KeyListener {
     public void keyTyped(KeyEvent arg0) {
        
     }
-
+    /**
+     * Hvis gamestaten er active_game så startes metodene clockTick(),
+     * setTimerDelay() og repaint().
+     * @param event
+     */
     private void clockTick(ActionEvent event){
         if (cmodel.getGameState() == GameState.ACTIVE_GAME){
             cmodel.clockTick();
@@ -77,11 +81,12 @@ public class CannonController implements java.awt.event.KeyListener {
 
         }
     
-    
-
-    
+    /**
+     * Metoden finner delayen, og setter delayen ved å kalle på
+     * setDelay og setInitialDelay på timer objektet. 
+     */
     private void setTimerDelay(){
-        int delay = cmodel.timeBetweenEachAlienMove();
+        int delay = cmodel.timeBetweenEachAlienLaserMove();
         timer.setDelay(delay); 
         timer.setInitialDelay(delay);
     }

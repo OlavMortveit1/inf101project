@@ -70,7 +70,7 @@ public class SpaceInvadersModel implements ViewableSpaceInvadersModel, Controlla
     }
    
     @Override
-    public int timeBetweenEachAlienMove() {
+    public int timeBetweenEachAlienLaserMove() {
         return 10;
     }
     @Override
@@ -94,12 +94,12 @@ public class SpaceInvadersModel implements ViewableSpaceInvadersModel, Controlla
         laser.moveLaser();
     }
     @Override
-    public void newLaser(int x) {
+    public void newLaser(int xPos) {
         laser.setY();
-        laser.setX(x);
+        laser.setX(xPos);
         this.ls = LaserState.ACTIVE_LASER;
         if(this.ls == LaserState.NOT_ACTIVE_LASER){
-            this.laser = new Laser(x);
+            this.laser = new Laser(xPos);
         }
         
     }
