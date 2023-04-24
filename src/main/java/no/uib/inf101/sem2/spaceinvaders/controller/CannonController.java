@@ -11,8 +11,8 @@ import no.uib.inf101.sem2.spaceinvaders.view.SpaceInvadersView;
 
 public class CannonController implements java.awt.event.KeyListener {
 
-    public ControllableSpaceInvadersModel cmodel;
-    public SpaceInvadersView view; 
+    private final ControllableSpaceInvadersModel cmodel;
+    private final SpaceInvadersView view; 
     private final Timer timer; 
     
     /**
@@ -26,7 +26,6 @@ public class CannonController implements java.awt.event.KeyListener {
         view.addKeyListener(this);
         view.setFocusable(true);
         this.timer = new Timer(cmodel.timeBetweenEachAlienLaserMove(), this::clockTick);
-        
         timer.start();
      
     }

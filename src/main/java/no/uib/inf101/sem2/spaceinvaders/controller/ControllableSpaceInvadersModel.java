@@ -58,11 +58,6 @@ public interface ControllableSpaceInvadersModel {
      */
     void newLaser(int xPos);
 
-    /**
-     * Finner x-posisjonen til kanonen og setter x-posisjonen til laseren 
-     * ut i fra denne.
-     */
-    void setLaserX();
 
     /**
      * Finner posisjonen til kanonen.

@@ -103,10 +103,7 @@ public class SpaceInvadersModel implements ViewableSpaceInvadersModel, Controlla
         }
         
     }
-    @Override
-    public void setLaserX() {
-        laser.setX(player.getCannonPos());
-    }
+    
     @Override
     public LaserState getLaserState() {
         return ls;
@@ -130,7 +127,6 @@ public class SpaceInvadersModel implements ViewableSpaceInvadersModel, Controlla
         changeToNotAcitveLaserState();
         laser.setY();
         killcount ++;
-        
     }
 
     @Override
